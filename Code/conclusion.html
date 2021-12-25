@@ -1,0 +1,163 @@
+<!doctype>
+
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Rapport de notre TPE sur les reseaux de neuronnes biologiques et artificiels"/>
+		<meta name="author" content="Edgar Desnos"/>
+		<meta name="keywords" content="TPE,Reseaux,neuronnes,artificiels,biologiques"/>
+		<link rel="stylesheet", href="style.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="icon" type="image/png" href="images/logo.png" />
+		
+		<script type="text/javascript">
+			$(window).on('scroll', function() {
+				if($(window).scrollTop()) {
+					$('nav').addClass('black');
+				}
+				else {
+					$('nav').removeClass('black');
+				}
+			})
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var offset = 250;
+				var duration = 500;
+				
+				$(window).scroll(function(){
+					if($(this).scrollTop() > offset){
+						$('.top').fadeIn(duration);
+					}else{
+						$('.top').fadeOut(duration);
+					}
+					});
+					});
+		</script>
+		
+		<title>TPE réseaux de neurones</title>
+		
+	</head>
+
+	<body onload="document.body.style.opacity='1'">
+		<div class="wrapper">
+		<section id="top">
+			<nav>
+				<div class="logo"><b>TPE réseaux de neurones</b></div>
+				<ul>
+					<li><a class="unactive" href="home.html">Accueil</a></li>
+					<li><a class="unactive" href="intro.html">Introduction</a></li>
+					<li><a class="unactive" href="theorie.html">Théorie</a></li>
+					<li><a class="unactive" href="experience.html">Expériences</a></li>
+					<li><a class="active" href="#">Conclusion</a></li>
+				</ul>
+			</nav>
+			<section class="back">
+			<div class="inner">
+				<div class="title">
+					<h1>Conclusion</h1>
+				</div>
+			</div>
+			</section>
+			<section class="content">
+			<p>Le réseau de neurones artificiels se présente comme une 
+			véritable analogie du réseau de neurones biologiques. En 
+			effet, les neurones artificiels et biologiques adoptent 
+			les mêmes structures et le même mode de fonctionnement, 
+			rendant ainsi le réseau de neurones artificiels sensiblement 
+			efficace dans la transmission d’informations. Ses nombreuses 
+			topologies possibles, inspirées également des différents 
+			réseaux de neurones existant dans notre cerveau, rendent 
+			le réseau de neurones artificiels modulable pour toute 
+			sorte de problème, tel que la reconnaissance d’image ou 
+			encore la classification de données. Cependant, ses 
+			utilisations ne seraient possibles sans la capacité 
+			d’apprentissage du réseau de neurones artificiels qui, 
+			grâce à un algorithme d’apprentissage spécifique, 
+			parvient à se corriger et à limiter ses erreurs après 
+			divers cycles d’entrainements. Cette plasticité, 
+			possible grâce à l’algorithmique, se rapproche alors 
+			fortement de celle du cerveau humain.
+			<br>
+			<br>
+			Ainsi, en comprenant le fonctionnement du réseau 
+			de neurones artificiels et s’inspirant du cerveau 
+			humain, qui parvient à limiter ses erreurs grâce à 
+			l’entrainement, nous avons réussi à programmer notre 
+			propre réseau de neurones artificiels capable de 
+			différencier trois situations, correspondant aux 
+			chiffres 0,1 et 2. En effet, à partir d’une base 
+			d’exemples représentant ces chiffres, notre réseau 
+			de neurones a été entrainé, comme un réseau de 
+			neurones biologiques, à reconnaitre ces situations 
+			grâce à un algorithme d’apprentissage suivant une 
+			méthode dite de « rétropropagation du gradient ». 
+			Le réseau de neurones artificiels corrigeait ainsi 
+			ces erreurs au fil des cycles d’entrainement, ce 
+			qui lui a permis par la suite de différencier les 
+			chiffres 0,1 et 2, comme le ferait un être humain 
+			dans son jeune âge. En s’inspirant de la plasticité 
+			du cerveau humain, nous avons été alors capables de 
+			créer un réseau de neurones pouvant reconnaitre des 
+			images en imitant le mode de raisonnement de l’être 
+			humain.
+			<br>
+			Cependant, le potentiel du réseau de neurones 
+			artificiels ne se limite pas seulement à cette 
+			capacité de reconnaissance d’image. En effet, le 
+			réseau de neurones artificiels, en s’inspirant du 
+			réseau de neurones biologiques, est parvenu à le 
+			surpasser. Nous avons ainsi prouvé que le réseau de 
+			neurones réalisait moins d’erreurs quant à la 
+			différenciation de trois situations, et qu’il apprenait 
+			de surcroît beaucoup plus rapidement que l’homme. Cela 
+			explique alors pourquoi les réseaux de neurones 
+			artificiels connaissent un tel succès dans le diagnostic 
+			et le dépistage de maladies dans le domaine de la santé 
+			plus particulièrement.
+			<br>
+			<br>
+			Néanmoins, si les réseaux de neurones artificiels se 
+			démarquent considérablement lorsqu’ils sont employés 
+			pour une tâche spécifique telle que la reconnaissance 
+			d’image, ils présentent comme limite de ne pas pouvoir 
+			réaliser plusieurs tâches en parallèles. En effet, alors 
+			que le cerveau humain est capable de traiter de milliers 
+			d’informations simultanément, le réseau de neurones 
+			artificiels reste séquentiel et traite les informations 
+			les unes après les autres. Ainsi, une équipe de chercheurs 
+			canadiens ont réussi à réaliser un réseau de 2.5 millions 
+			de neurones artificiels, qui est capable de comprendre ce 
+			qu’il voit, de faire un raisonnement logique et d’écrire 
+			sa réponse à l’aide d’un bras connecté au réseau. Cependant, 
+			pour compléter une suite de chiffres, il ne mettait pas 
+			moins de… 16 heures pour répondre au problème posé.
+			<br>
+			<br>
+			D’énormes défis restent donc à relever dans le domaine 
+			des réseaux de neurones artificiels, expliquant ainsi 
+			pourquoi les plus grandes entreprises et états du monde 
+			investissent des dizaines de millions d’euros dans ce 
+			domaine et plus généralement dans l’intelligence artificielle. 
+			Le prochain défi du XXIème serait alors de créer un réseau 
+			de neurones capable de comprendre et de réagir rapidement à 
+			l’environnement qui l’entoure. Il pourra alors être utilisé 
+			dans divers projets, comme dans celui des voitures autonomes…
+			</p>
+			<div>
+				<a class="top" href="conclusion.html#top"></a>
+				</div>
+			</section>
+			
+			<footer>
+		<p>Site internet et TPE produits par Edgar DESNOS, Rodolphe VALICON et Aymane GHANAM.
+		<br>
+		<br>
+		<a href="bibli.html" class="bibli">Bibliographie du TPE</a>
+		</p>
+
+	</footer>

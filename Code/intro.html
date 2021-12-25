@@ -1,0 +1,146 @@
+<!doctype>
+
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Rapport de notre TPE sur les reseaux de neuronnes biologiques et artificiels"/>
+		<meta name="author" content="Edgar Desnos"/>
+		<meta name="keywords" content="TPE,Reseaux,neuronnes,artificiels,biologiques"/>
+		<link rel="stylesheet", href="style.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="icon" type="image/png" href="images/logo.png" />
+		
+		<script type="text/javascript">
+			$(window).on('scroll', function() {
+				if($(window).scrollTop()) {
+					$('nav').addClass('black');
+				}
+				else {
+					$('nav').removeClass('black');
+				}
+			})
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var offset = 250;
+				var duration = 500;
+				
+				$(window).scroll(function(){
+					if($(this).scrollTop() > offset){
+						$('.top').fadeIn(duration);
+					}else{
+						$('.top').fadeOut(duration);
+					}
+					});
+					});
+		</script>
+		
+		<title>TPE réseaux de neurones</title>
+		
+	</head>
+
+	<body onload="document.body.style.opacity='1'">
+		<div class="wrapper">
+		<section id="top">
+			<nav>
+				<div class="logo"><b>TPE réseaux de neurones</b></div>
+				<ul>
+					<li><a class="unactive" href="home.html">Accueil</a></li>
+					<li><a class="active" href="#">Introduction</a></li>
+					<li><a class="unactive" href="theorie.html">Théorie</a></li>
+					<li><a class="unactive" href="experience.html">Expériences</a></li>
+					<li><a class="unactive" href="conclusion.html">Conclusion</a></li>
+				</ul>
+			</nav>
+			<section class="back">
+			<div class="inner">
+				<div class="title">
+					<h1>Introduction</h1>
+				</div>
+			</div>
+			</section>
+			<section class="content">
+				<p>Présenté par l’entrepreneur américain Elon Musk 
+				comme «le plus grand risque auquel notre civilisation 
+				sera confrontée» tandis que l’université de Stanford 
+				mondialement reconnue ne cesse d’en montrer les bienfaits 
+				et les progrès, l’intelligence artificielle est aujourd’hui 
+				au cœur des débats et se présente comme « le » sujet 
+				incontournable du XXIème siècle.
+				<br>
+				<br>
+				Très médiatisée, l’intelligence artificielle reste 
+				aujourd’hui un sujet encore mal maitrisé par le grand public. 
+				Elle désigne en réalité l'ensemble des théories et des techniques 
+				permettant de reproduire le raisonnement d'un Homme au sein 
+				d’une machine. Existant depuis les années 1950 avec les travaux 
+				d’Alain Turing, le concept d’intelligence artificielle a commencé 
+				à attirer l’intérêt de la communauté scientifique dans les années 
+				1980, lorsque les chercheurs Geoffrey Hinton et Yann LeCun ont 
+				permis à la machine d’apprendre par elle-même grâce à des réseaux 
+				de neurones artificiels inspirés de ceux du cerveau humain.
+				<br>
+				<br>
+				Le domaine des réseaux de neurones est entré dans une nouvelle 
+				dimension ces dernières années. Il s’inscrit en effet dans les 
+				plus grands projets scientifiques à venir, comme celui de la 
+				voiture autonome, et attirent l’engouement des plus grandes 
+				entreprises californiennes. Pour comprendre l’intérêt des réseaux 
+				de neurones artificiels, nous avons donc opté pour ce sujet dans 
+				le cadre de notre projet de TPE. 
+				<br>
+				Le domaine des réseaux de neurones a pour spécificité de se 
+				présenter comme un domaine pluridisciplinaire, alliant à la 
+				fois la discipline des mathématiques, nécessaire pour créer 
+				les algorithmes permettant de faire fonctionner les réseaux de 
+				neurones artificiels, et le domaine des sciences de la vie, 
+				permettant de comprendre le fonctionnement du cerveau humain 
+				et de s’en inspirer afin d’utiliser ses propriétés dans le 
+				réseau de neurones artificiels.  De plus, l’étude des réseaux 
+				de neurones artificiels s’inscrit dans le thème « Structures », 
+				puisque le concept même des réseaux de neurones artificiels est 
+				de créer une structure similaire à celle du réseau de neurones 
+				biologiques.
+				<br>
+				L’étude des réseaux de neurones semble donc s’inscrire parfaitement 
+				dans le cadre des projets de TPE. 
+				<br>
+				<br>
+				Pour comprendre l’intérêt suscité par les réseaux de neurones, 
+				nous allons nous intéresser plus particulièrement au domaine 
+				dans lequel ils se révèlent être particulièrement efficaces : 
+				la reconnaissance d’image. Nous allons alors essayer de comprendre 
+				comment, en s’inspirant du réseau de neurones biologiques, un réseau 
+				de neurones artificiels peut-il différencier trois situations 
+				avec le moins d’erreurs possible.
+				<br>
+				Dans un premier temps, nous verrons les analogies présentes entre 
+				le réseau de neurone biologique et artificiel, permettant par la 
+				même occasion de comprendre précisément le fonctionnement des 
+				réseaux de neurones artificiels.
+				<br>
+				Dans un deuxième temps, nous testerons les capacités de 
+				reconnaissance de l’Homme afin de comprendre comment ce 
+				dernier parvient à limiter ses erreurs. Nous nous en 
+				inspirerons pour créer notre propre réseau de neurones 
+				artificiels, capable de différencier trois situations avec 
+				le moins d’erreurs possibles. Cela nous permettra d’aboutir 
+				aux applications concrètes du réseau de neurones artificiels 
+				qui en font un concept révolutionnaire.
+				</p>
+				<div>
+				<a class="top" href="intro.html#top"></a>
+				</div>
+			</section>
+			<footer>
+		<p>Site internet et TPE produits par Edgar DESNOS, Rodolphe VALICON et Aymane GHANAM.
+		<br>
+		<br>
+		<a href="bibli.html" class="bibli">Bibliographie du TPE</a>
+		</p>
+
+		</footer>

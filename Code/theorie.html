@@ -1,0 +1,829 @@
+<!doctype>
+
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Rapport de notre TPE sur les reseaux de neuronnes biologiques et artificiels"/>
+		<meta name="author" content="Edgar Desnos"/>
+		<meta name="keywords" content="TPE,Reseaux,neuronnes,artificiels,biologiques"/>
+		<link rel="stylesheet", href="style.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="icon" type="image/png" href="images/logo.png" />
+		
+		<script type="text/javascript">
+			$(window).on('scroll', function() {
+				if($(window).scrollTop()) {
+					$('nav').addClass('black');
+				}
+				else {
+					$('nav').removeClass('black');
+				}
+			})
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var offset = 250;
+				var duration = 500;
+				
+				$(window).scroll(function(){
+					if($(this).scrollTop() > offset){
+						$('.top').fadeIn(duration);
+					}else{
+						$('.top').fadeOut(duration);
+					}
+					});
+					});
+		</script>
+		
+		<title>TPE réseaux de neurones</title>
+		
+	</head>
+
+	<body onload="document.body.style.opacity='1'">
+		<div class="wrapper">
+			<section id="top">
+			<nav>
+				<div class="logo"><b>TPE réseaux de neurones</b></div>
+				<ul>
+					<li><a class="unactive" href="home.html">Accueil</a></li>
+					<li><a class="unactive" href="intro.html">Introduction</a></li>
+					<li><a class="active" href="">Théorie</a></li>
+					<li><a class="unactive" href="experience.html">Expériences</a></li>
+					<li><a class="unactive" href="conclusion.html">Conclusion</a></li>
+				</ul>
+			</nav>
+			<section class="back">
+			<div class="inner">
+				<div class="title">
+					<h1>Théorie</h1>
+				</div>
+			</div>
+			</section>
+			<section class="content">
+			<h1>Sommaire</h1>
+			<p>
+			<a class="som" href="./theorie.html#1">1) Structure et fonctionnement d’un neurone biologique et artificiel</a>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="som" href="./theorie.html#1A">A- Structure</a>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="som" href="./theorie.html#1B">B- Fonctionement</a>
+			<br><br>
+			<a class="som" href="./theorie.html#2">2) Réseaux de neurones biologiques et artificiels</a>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="som" href="./theorie.html#2A">A- Transmission du message nerveux d’un neurone à un autre</a>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a class="som" href="./theorie.html#2B">B- Topologie des réseaux de neurones</a>
+			<br><br>
+			<a class="som" href="./theorie.html#3">3) Les réseaux de neurones Kohonen</a>
+			</p>
+			<section id="1">
+			<p>
+			<br><br>
+			<a class="som" href="./theorie.html#4">4) Plasticité des réseaux de neurones biologiques et artificiels</a>
+			<br><br>
+			<hr>
+			</p>
+			<section id="1A">
+			<br>
+			<h1>1) Structure et fonctionnement d’un neurone biologique et artificiel</h1>
+			<h1 class="petit">A- Structure</h1>
+				<p>Un neurone biologique est tout d’abord une cellule nerveuse spécialisée dans la 
+				transmission et le traitement d’informations. Sa structure cellulaire a été découverte 
+				au début du XXème siècle grâce notamment au médecin italien Camillo Golgi, qui a pu 
+				observer les cellules nerveuses et leurs prolongements en les marquant avec du nitrate 
+				d’argent.
+				<br>
+				Aujourd’hui, nous savons qu’un neurone biologique est composé d’un corps cellulaire 
+				qui, comme pour toutes les autres cellules du corps humain, comporte un noyau et un 
+				cytoplasme, entourés par une membrane. Le cytoplasme du neurone biologique comporte 
+				également de petits organes, appelés « organites », tels que la mitochondrie. Cette 
+				dernière a pour fonction de produire l’énergie nécessaire à la survie du neurone.
+				<br>
+				Enfin, le neurone biologique est composé de plusieurs projections qui le relient aux 
+				neurones. Il possède plus précisément deux types de projections :
+				<br>
+				<br>
+				- Les axones, de formes longues et similaires à des tubes, qui vont transmettre les 
+				messages nerveux du neurone auquel il appartient à un autre neurone biologique. Chaque 
+				neurone ne possède qu’un seul axone. Cet axone est entouré de gaines de myéline, qui 
+				vont permettre d’améliorer et d’accélérer la conduction des messages nerveux.
+				<br>
+				<br>
+				- Les dendrites, de formes plus courtes et plus fines, qui vont recevoir les messages 
+				des autres neurones. Chaque neurone possède des centaines voire des milliers de dendrites.
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/schemaneurone.png" alt="schéma d'un neurone bilogique"/>
+				<p class="under"><u>Schéma du neurone biologique</u></p>
+				<p>
+				<br>
+				<br>
+				A la différence du réseau de neurones artificiels, on compte plus de 200 types de neurones 
+				différents dans notre cerveau. Les trois grands types de neurones les plus connus sont : 
+				les neurones pseudo-unipolaire, bipolaire et multipolaire. Les neurones sont répartis dans 
+				ces catégories en fonction du nombre d’extensions ou de liaisons sortant du corps cellulaire :
+				<br>
+				<br>
+				- Les neurones pseudo-unipolaires possèdent une dendrite et un axone accolés, « d’où le nom 
+				unipolaire », mais ils se séparent ensuite en deux projections différentes, d’où le préfixe 
+				« pseudo ». Ces neurones sont spécialisés dans la réception des messages nerveux provenant 
+				des récepteurs sensoriels.
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/neu-pu.png" alt="schéma structural et figuratif d'un neurone pseudo-unipolaire"/>
+				<p class="under"><u>Schéma structural et figuratif d’un neurone pseudo-unipolaire</u></p>
+				<p>
+				<br>
+				<br>
+				- Les neurones bipolaires possèdent deux projections, comme en témoigne le préfixe « bi ». 
+				Ces projections se présentent comme un axone et une dendrite opposés par rapport au centre 
+				la cellule. Ces neurones, qui portent le nom « d’interneurones », ont essentiellement pour 
+				fonction de connecter les différents neurones présents dans le cerveau.
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/neu-bi.png" alt="schéma structural et figuratif d'un neurone bipolaire"/>
+				<p class="under"><u>Schéma structural et figuratif d’un neurone bipolaire</u><p>
+				<p>
+				<br>
+				<br>
+				- Les neurones multipolaires sont les neurones qui présentent un axone ainsi que de nombreuses 
+				dendrites formant un arbre dendritique autour du corps cellulaire. Ils ont pour fonction d’envoyer 
+				les messages nerveux vers les muscles. Ce sont donc des neurones « moteurs ».
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/neu-mu.png" alt="Schéma structural et figuratif d'un neurone multipolaire"/>
+				<p class="under"><u>Schéma structural et figuratif d’un neurone multipolaire</u></p>
+				<p>
+				<br>
+				<br>
+				Chaque neurone biologique a pour fonction de transmettre un message nerveux, également appelé 
+				influx nerveux, qui se propage d’un neurone à un autre sous forme d’impulsions électriques 
+				appelées « potentiels d’action ». Le neurone qui envoie le message nerveux est appelé « neurone 
+				pré-synaptique » et celui qui recevra le message est nommé « neurone post-synaptique ». Néanmoins, 
+				les « potentiels d’actions », permettant la transmission d’un message nerveux d’un neurone 
+				pré-synaptique à un neurone post-synaptique, perdent en intensité en passant d’un neurone à 
+				un autre. Chaque neurone post-synaptique va donc devoir recréer un potentiel d’action, afin 
+				d’assurer la transmission du message nerveux.
+				<br>
+				Cependant, avant de créer son propre potentiel d’action, un neurone post-synaptique fait la 
+				somme des intensités de toutes les impulsions électriques qu’il reçoit des neurones pré-synaptiques. 
+				Si cette somme est supérieur ou égale à un certain seuil, -50 millivolt environ, le neurone 
+				post-synaptique crée à son tour un potentiel d’action, permettant la transmission du message 
+				nerveux. Si cette somme est inférieure strictement au seuil, le neurone ne crée aucun potentiel 
+				d’action et le message n’est pas transmis.  Ce déclenchement se fait au niveau du « cône d’implantation » 
+				du neurone, c’est-à-dire la partie du neurone biologique où l’axone sort du corps cellulaire. 
+				<br>
+				<br>
+				Le neurone obéit donc à la loi du « tout ou rien », c’est-à-dire que s’il reçoit des influx nerveux 
+				dont la somme des intensités est inférieur à un certain seuil, il ne produit pas de potentiel d’action, 
+				et dès que ce seuil est égalé ou dépassé, il produit un unique et même potentiel d’action.
+				<br>
+				<br>
+				A partir des propriétés du neurone biologique, Warren McCulloch et Walter Pitts, deux neurologues 
+				américains, vont créer le premier neurone artificiel en 1943. Le neurone artificiel, également 
+				appelé neurone formel, n’est donc qu’une modélisation mathématique du neurone biologique.
+				<br>
+				<br>
+				Le neurone formel est constitué d’une entrée, d’un corps et d’une sortie :
+				<br>
+				L’entrée est définit par trois informations différentes :
+				<br>
+				- Le nombre d’entrées, notée n. Ce nombre d’entrées n appartient à l’ensemble de définition Df = N<sup>+*</sup>.
+				<br>
+				- L’entrée elle-même, notée x. Cette entrée x appartient à l’ensemble de définition Df =  {0 ; 1}. 
+				En effet, l’entrée obéit à la logique booléenne : elle peut être soit « activée » et aura pour valeur 
+				x = 1, soit « désactivée » et aura pour valeur x = 0.
+				<br>
+				- Chaque entrée « x » possède un poids p, qui est le coefficient de l’entrée et qui représente la « force » 
+				de connexion entre deux neurones. Ce poids, notée p, appartient à l’ensemble de définition Df = R<sup>+*</sup>. 
+				<br>
+				<br>
+				Le « corps » du neurone artificiel est abstrait. Il correspond plutôt à des fonctions mathématiques. Il 
+				comprend quelques fois un seuil, c’est-à-dire une valeur limite, noté S. 
+				<br>
+				<br>
+				Pour finir, la sortie est notée y. Elle appartient à l’ensemble de définition Df = {0 ; 1}.
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="400px" src="images/neuroneformel.png" alt="Schéma structural et non figuratif d’un neurone formel"/>
+				<p class="under"><u>Schéma structural et non figuratif d’un neurone formel, xi étant les entrées, p étant les poids de ces entrées (les valeurs des seuils et des poids dans ce schéma sont uniquement des exemples)</u></p>
+				<p>
+				<br>
+				<br>
+				Les neurones artificiels et biologiques possèdent donc une structure similaire. En effet, dans un 
+				neurone artificiel, il y’a qu’une seule sortie qui renvoie une information à un autre neurone 
+				artificiel, comme il y’a qu’un seul axone dans le neurone biologique qui renvoie lui aussi le 
+				message nerveux à un autre neurone biologique.  Il y’a également plusieurs entrées qui reçoivent 
+				les informations des autres neurones artificiels, comme il y’a plusieurs dendrites qui reçoivent 
+				les informations des autres neurones biologiques. Le corps cellulaire dans un neurone biologique 
+				agit également comme un seuil puisqu’il déclenche un potentiel d’action si et seulement si l’intensité 
+				des potentiels d’action qu’il reçoit dépasse un certain seuil.
+				</p>
+				<section id="1B">
+				<br>
+				<br>
+				<br>
+				<br>
+				</section>
+				<h1 class="petit">B- fonctionement</h1>
+				<p>
+				Concernant le fonctionnement du neurone artificiel, deux fonctions différentes vont traiter les 
+				entrées du neurone artificiel. Dans un premier temps, le neurone artificiel va calculer, pour 1 
+				à n entrées, la somme de toutes ses entrées xi pondérées par le poids pi. Cette opération est 
+				assurée par une fonction d’agrégation f, qui peut être définie par la somme suivante : 
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="200px" src="images/fagregation.png" alt="Somme définissant la fonction d'agregation f"/>
+				<p class="under">n étant le nombre d’entrées, xi l’entrée considérée et pi le poids de cette entrée</p>
+				<p>
+				<br>
+				<br>
+				Le neurone artificiel va ensuite comparer le résultat obtenu par la fonction d’agrégation avec la 
+				valeur du seuil S du neurone, fixé arbitrairement. Si le résultat est supérieur ou égal à la valeur 
+				du seuil S alors la sortie y du neurone a pour valeur y = 1, ce qui signifie que le neurone est 
+				activé et qu’un courant électrique est transmis. Si le résultat est inférieur strictement à la 
+				valeur du seuil S alors la sortie y du neurone a pour valeur y = 0, ce qui signifie que le neurone 
+				n’est pas activé et qu’aucun courant électrique n’est transmis. La fonction d’activation d’un neurone 
+				artificiel est donc une fonction à seuil, notée Φ, et qui peut être défini par :
+				</p>
+				<img class="mid" height="auto" width="200px" src="images/factivation.png" alt="Définition d'une fonction d'activation d'un neurone artificiel"/>
+				<p class="under">S étant le seuil du neurone et x étant le résultat de la fonction d’agrégation f précédemment définie.</p>
+				<p>
+				<br>
+				<br>
+				Si le seuil a pour valeur S = 0, la fonction à seuil g a pour représentation graphique :
+				<br>
+				<br>
+				<img class="mid" height="auto" width="500px" src="images/graphiquefseuil.png" alt="Graphique représentant la fonction à seuil"/>
+				<br>
+				<br>
+				Le fonctionnement du neurone artificiel peut donc être résumé par le schéma suivant :
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="600px" src="images/schemaneuroneartificiel.png" alt="Schéma fonctionnel et non figuratif d’un neurone artificiel"/>
+				<p class="under"><u>Schéma fonctionnel et non figuratif d’un neurone artificiel</u></p>
+				<p>
+				<br>
+				<br>
+				Cependant la fonction d’activation Φ d’un neurone artificiel n’est pas forcément une fonction à seuil. 
+				La fonction sigmoïde, qui est une approximation de la fonction à seuil, peut également être utilisée 
+				comme fonction d’activation et sera plus adapté pour créer un réseau de neurones artificiels performant, 
+				comme nous le verrons plus tard. Cette fonction est définie par le rapport suivant :
+				<img class="mid" height="auto" width="200px" src="images/fsigmoide.png" alt="Définition d'une fonction sigmoïde"/>
+				x étant le résultat de la fonction d’agrégation f définie précédemment et e étant le nombre exponentiel
+				<br>
+				<br>
+				La représentation graphique de cette fonction est comme la suivante :
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="700px" src="images/graphiquefsigmoide.png" alt="Représentation graphique de la fonction sigmoïde"/>
+				<p class="under"><u>Représentation graphique d’une fonction sigmoïde, réalisée sur Geogebra</u></p>
+				<p>
+				<br>
+				<br>
+				La fonction sigmoïde ne possède néanmoins pas de seuil. Si l’entrée xi, pondérée par son poids pi, possède 
+				une valeur élevée, la valeur de la sortie du neurone se rapprochera de 1. Inversement, si l’entrée xi, 
+				pondérée par son poids pi, possèdent une valeur faible, la valeur de la sortie se rapprochera de 0. La 
+				fonction sigmoïde, qui est utilisé quelques fois comme fonction d’activation pour un neurone artificiel, 
+				n’obéit donc pas à la loi du tout ou rien et diffère en cela au fonctionnement du neurone biologique.
+				<br>
+				<br>
+				Pour conclure, lorsque la fonction d’activation utilisée est une fonction à seuil, les réseaux de neurones 
+				biologiques et artificiels possèdent le même mode de fonctionnement. En effet, le neurone artificiel renvoie 
+				le courant électrique si et seulement si la somme des courants électriques des entrées dépasse un certain seuil. 
+				De même, le neurone biologique ne produit un potentiel d’action que lorsque l’influx ou le message nerveux qu’il 
+				reçoit des neurones pré-synaptiques a une intensité électrique supérieure à un certain seuil.
+				</p>
+				</section>
+				</section>
+				<section id="2">
+				<br>
+				<br>
+				<br>
+				<br>
+				<h1>2) Réseaux de neurones biologiques et artificiels</h1>
+				<p>Un neurone, qu’il soit biologique ou artificiel, n’est pas capable de réaliser des tâches très complexes 
+				s’il demeure seul. Il va donc s’associer avec plusieurs autres neurones pour former un réseau de neurones.
+				</p>
+				<section id="2A">
+				<br>
+				<br>
+				<br>
+				<br>
+				<h1 class="petit">A- Transmission du message nerveux d’un neurone à un autre</h1>
+				<p>Dans un cerveau biologique, les neurones doivent d’abord mettre en place des synapses, c’est-à-dire des 
+				zones de contact entre eux, pour pouvoir former un réseau de neurones et se transmettre les messages nerveux.
+				<br>
+				<br>
+				La structure du neurone biologique est propice à la mise en place de ces synapses. En effet, comme exprimé 
+				précédemment, les neurones possèdent des axones qui sont chargés de transmettre le message nerveux d’un 
+				neurone pré-synaptique aux dendrites d’un neurone post-synaptique. Cet axone est néanmoins séparé de la 
+				dendrite du neurone post-synaptique par un petit espace appelé « fente synaptique ».
+				<br>
+				Afin de pouvoir transmettre ces messages, les axones des neurones pré-synaptiques sont dotés d’infimes 
+				protubérances à leur extrémité, des sortes de petites bosses appelées « terminaux synaptiques ». Ces 
+				terminaux synaptiques contiennent des substances chimiques, appelés neurotransmetteurs. Lorsqu’un message 
+				nerveux arrive au niveau de la terminaison d’un axone, cela provoque l’entrée d’ions calcium Ca2+ dans la 
+				terminaison de l’axone, permettant ainsi la libération des neurotransmetteurs.
+				<br>
+				Ces neurotransmetteurs vont ensuite se fixer sur des récepteurs membranaires de la dendrite du neurone 
+				post-synaptique. Cette fixation provoque l’entrée d’ion sodium Na+ dans le neurone post-synaptique, produisant 
+				ainsi une dépolarisation. Si cette dépolarisation est suffisante, le message nerveux est alors transmis au 
+				corps cellulaire du neurone post-synaptique sous forme d’impulsions électriques.
+				<br>
+				<br>
+				Cette transmission du message nerveux à l’aide de neurotransmetteurs est appelée la synapse chimique. Il 
+				s’agit du mode de transmission le plus fréquent au sein du cerveau
+				<br>
+				<br>
+				</p>
+				<p class="under"><video controls width="700px" src="videos/neuro2.mp4"></video>
+				<br><br>
+				<u>Animation expliquant le processus de la synapse chimique entre deux neurones</u></p>
+				<p>
+				<br>
+				<br>
+				Il existe cependant un autre type de synapse : la synapse électrique, qui sera cette fois-ci utilisée par 
+				les réseaux de neurones artificiels. Dans ce cas, l’axone du neurone pré-synaptique et les dendrites du 
+				neurone post-synaptique ne sont pas séparées par une fente synaptique. Ils sont reliés par des petits canaux, 
+				appelés « jonctions communicantes », qui permettent au message nerveux de passer directement d’un neurone à 
+				un autre sans utiliser des messagers chimiques tels que les neurotransmetteurs. Le passage du message nerveux 
+				est dans ce cas beaucoup plus rapide. Les synapses électriques sont cependant peu nombreuses dans le système 
+				nerveux central.
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/synapseé.png" alt="Schéma structural et figuratif d’une synapse électrique"/>
+				<p class="under"><u>Schéma structural et figuratif d’une synapse électrique</u></p>
+				<p>
+				<br>
+				<br>
+				En s’inspirant du réseau de neurones biologiques, le neurone artificiel va également être associé à plusieurs 
+				autre neurones artificiels, jusqu’à former un réseau de neurones artificiels. Les entrées de chaque neurone 
+				artificiel vont alors recevoir les informations des neurones se trouvant en amont, et leurs sorties respectifs 
+				vont se ramifier pour transmettre ses informations à des neurones artificiels en aval. Au sein de ce réseau, 
+				l’information est transmise d’un neurone artificiel à un autre à l’aide de connexions, appelés « connexions 
+				synaptiques ». L’information est transmise uniquement sous forme de courant électrique.
+				<br>
+				<br>
+				<img class="mid" height="auto" width="600px" src="images/typereseau.png" alt="Schéma fonctionnel retravaillé d’un type de réseaux de neurones artificiels"/>
+				<br>
+				<br>
+				La transmission d’informations d’un neurone artificiel à un autre s’inspire alors de la synapse électrique 
+				propre à certains neurones biologiques de notre corps humain. En effet, au sein d’un réseau de neurones 
+				artificiels, il n’y a pas de neurotransmetteurs entre la sortie du neurone en amont et les entrées du neurone 
+				en aval. L’information, qui se présente sous forme de courant électrique, est donc directement transmise d’un 
+				neurone à un autre, comme c’est le cas pour une synapse électrique.
+				</p>
+				<section id="2B">
+				<br>
+				<br>
+				<br>
+				<br>
+				<h1 class="petit">B- Topologie des réseaux de neurones</h1>
+				<p>Au sein d’un réseau de neurones artificiels et quel que soit sa topologie, chaque neurone formel va toujours 
+				garder le même mode de fonctionnement, c’est-à-dire qu’il va faire la somme des entrées reçues des neurones de 
+				la couche précédente et pondérées par leur poids respectif, pour ensuite comparer cette somme avec son seuil et 
+				donner une sortie, qui aura elle-aussi un poids spécifique et qui sera transmise aux neurones de la couche 
+				suivante. Cependant, il n’y a pas qu’une seule architecture de réseau de neurones possible. Il existe, en effet, 
+				plusieurs types de réseaux de neurones, chacun répondant à un problème de plus en plus complexe. Ces réseaux de 
+				neurones s’inspirent principalement des différentes organisations des réseaux de neurones biologiques dans 
+				certaines parties du cerveau des vertébrés.
+				<br>
+				<br>
+				Parmi ces topologies possibles, on retrouve le réseau de neurones multicouche, tel que le perceptron multicouche 
+				créé par le scientifique américain Paul Werbos en 1984. Il s’agit du réseau de neurones le plus fréquemment utilisé, 
+				et correspond au réseau de neurones artificiels que nous allons utiliser par la suite pour répondre concrètement à 
+				notre problématique. Ce réseau de neurone est organisé en plusieurs couches : la couche d’entrée, les couches cachées 
+				ainsi que la couche de sortie. Chaque couche est constituée d’un certain nombre de neurones, et les neurones 
+				appartenant à une même couche ne sont pas reliés entre eux. Les neurones de chaque couche vont uniquement établir des 
+				liaisons ou des connexions avec les neurones de la couche suivante, si elle existe. Chaque connexion possède également 
+				un poids, un coefficient qui correspond à la « force » de la liaison entre deux neurones artificiels. 
+				<br>
+				<br>
+				<img class="mid" height="auto" width="400px" src="images/reseaumulti.png" alt="Schéma structural du réseau de neurones artificiels « multicouche »"/>
+				<br>
+				<br>
+				Dans un réseau de neurones multicouche, la première couche, appelée couche d'entrée, reçoit des informations qui vont 
+				permettre au réseau de neurones d’établir le problème à analyser. Par exemple, si l’on veut que le réseau de neurones 
+				établisse un diagnostic médical d’une personne, les symptômes de cette personne seront d’abord présentés dans la couche 
+				d’entrée. Le nombre de neurones de cette couche correspondra alors au nombre de variables d'entrées.
+				<br>
+				<br>
+				Les couches intermédiaires, appelée couches cachées en raison de l’absence de contact avec l’extérieur, prennent les 
+				informations transmises par les neurones de la couche d’entrée en amont, traitent les données pour essayer de trouver 
+				un lien entre ces dernières, et envoient de nouvelles informations aux neurones en aval.
+				<br>
+				<br>
+				Enfin, la dernière couche, appelée couche de sortie, donne le résultat obtenu après traitement des données entrées 
+				dans la première couche. Dans notre exemple de diagnostic médical, cette couche va donner le diagnostic. Il peut y 
+				avoir qu’une seul sortie, notée y, qui aura par exemple pour valeur y = 1 si la personne est malade, et pour valeur 
+				y = 0 si la personne est en bonne santé.
+				<br>
+				<br>
+				Ces réseaux de neurones multicouches sont des réseaux de neurones à « propagation avant », communément appelés en 
+				anglais « feedforward neural network ». Dans ce type de réseau, l’information transmise par les neurones adopte un 
+				chemin unique, vers l’avant, en passant d’abord par la couche d’entrée puis par les couches cachées et enfin par la 
+				couche de sortie.
+				<br>
+				<br>
+				L’organisation neuronale du perceptron multicouche est similaire à l’organisation des neurones dans certaines parties 
+				du cerveau humain. En effet, le néocortex humain, c’est-à-dire le tissu organique appartenant à notre cortex cérébral 
+				et également appelée substance grise, se révèle lui aussi être organisé en différentes couches de neurones. Il occupe 
+				une place essentiel dans notre cerveau puisqu’il responsable de nos perceptions sensorielles, de notre motricité, de 
+				notre langage et de bien d’autres fonctions. Son observation microscopique indique qu’il est composé, chez l’Homme, 
+				de six couches, appelés couches corticales et numérotées de I à VI comme le montre le schéma suivant : 
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/cortexsom.png" alt="Schéma de l’organisation en couches des neurones du cortex somatosensorielle"/>
+				<p class="under"><u>Schéma de l’organisation en couches des neurones du cortex somatosensorielle, responsable de nos cinq sens et appartenant au néocortex</u></p>
+				<p>
+				<br>
+				<br>
+				Chaque couche possède un nom et exerce une fonction particulière :
+				<br>
+				<br>
+				- La première couche est appelé « couche moléculaire ». Elle contient très peu de neurones mais beaucoup d’axones et 
+				de dendrites provenant des neurones des autres couches.
+				<br>
+				<br>
+				- La deuxième couche est appelé « couche granulaire externe ». Comme son nom l’indique, cette couche comporte des neurones 
+				dits « granulaires ». Ces neurones sont les plus petits neurones du cerveau humain. Cette couche reçoit les informations 
+				des autres aires du cortex. Cette couche est donc spécialisée dans la réception d’informations.
+				<br>
+				<br>
+				- La troisième couche est appelée couche pyramidale externe. Elle comporte des neurones pyramidaux, dont le corps cellulaire 
+				se présente sous la forme de pyramides. Leur axone est capable de se projeter à très longue distance, ce qui permet à la 
+				troisième couche de se spécialiser dans l’émission de messages nerveux vers les autres parties du cortex cérébral.
+				<br>
+				<br>
+				- La quatrième couche est appelée « couche granulaire interne ». Elle possède des neurones pyramidaux et étoilés, caractérisé 
+				par leur corps cellulaire sous forme d’étoile. Ces neurones vont alors recevoir les informations de certaines parties du 
+				cerveau, situées à l’extérieur du cortex. Elle est donc spécialisée dans la réception d’informations.
+				<br>
+				<br>
+				- La cinquième couche est appelée « couche pyramidale interne ». Comme son nom l’indique, elle comporte des neurones pyramidaux. 
+				Ces derniers, dotés de leur long axone, servent par exemple à actionner les motoneurones, responsables de la stimulation de nos 
+				fibres musculaires. Elle est donc spécialisée dans l’émission d’informations.
+				<br>
+				<br>
+				- La sixième et dernière couche est appelée « couche polymorphe ». Elle compte également des neurones pyramidaux qui vont envoyer 
+				notamment des informations au thalamus, une partie du cerveau responsable de notre vigilance et de notre sommeil. Elle est 
+				également spécialisée dans l’émission d’informations. 
+				<br>
+				<br>
+				Les neurones de ces couches ne sont pas activés aléatoirement. En effet, les neurones sont organisés sous formes de colonnes 
+				perpendiculaires aux couches corticales précédemment décrites. Chaque colonne assure ainsi une fonction précise et les neurones 
+				d’une même colonne sont stimulés simultanément, formant une unité fonctionnelle. Ainsi, au début des années 1960, le neurobiologiste 
+				américano-canadien Hubel et son collègue suédois Wiesel ont étudié le cortex visuel, qui lui aussi fait partie du néocortex humain, 
+				et ont mis en évidence cette organisation en colonnes. En effet, ces derniers ont réalisé une expérience sur un chat consistant à 
+				lui présenter une barre lumineuse devant les yeux tout en changeant régulièrement son sens d’orientation. Simultanément, ils ont 
+				introduit une microélectrode dans le cortex visuel du chat, permettant de mesurer les potentiels d’actions des différents neurones, 
+				comme on peut l’apercevoir sur le schéma de l’expérience suivante :
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="400px" src="images/experiencehubel.png" alt="Schéma de l’expérience de Hubel et de Wiesel mettant en évidence l’organisation en colonne des neurones du cortex visuel"/>
+				<p class="under"><u>Schéma de l’expérience de Hubel et de Wiesel mettant en évidence l’organisation en colonne des neurones du cortex visuel</u></p>
+				<p>
+				<br>
+				<br>
+				Ils ont alors remarqué que pour une orientation particulière de la barre lumineuse, ce sont les neurones d’une même colonne qui sont 
+				fortement stimulés. De même, en changeant l’orientation de la barre lumineuse, c’est désormais les neurones d’une autre colonne 
+				verticale qui sont les plus stimulés.
+				<br>
+				<br>
+				<img class="mid" height="auto" width="700px" src="images/resultatshubel.png" alt="Schéma illustrant les résultats obtenus lors de l’expérience de Hubel et de Wiesel"/>
+				<br>
+				<br>
+				Hubel et Wiesel en déduisent alors que chaque colonne du cortex visuel, perpendiculaire aux couches corticales, est sensible à une 
+				stimulation particulière et possède une orientation préférentielle. Cette organisation en colonnes fut ensuite généralisée à 
+				l’ensemble du néocortex.
+				<br>
+				<br>
+				Le cortex cérébral humain est donc également organisé en différentes couches verticales, où les neurones d’une même colonne agissent 
+				simultanément. Cela semble alors correspondre à l’organisation fonctionnelle du perceptron multicouche, où chaque couche verticale 
+				traite simultanément les informations qu’elle reçoit de la couche précédente. Cependant, le perceptron multicouche est composé de 
+				neurones artificiels similaires les uns par rapport aux autres, tandis que le néocortex et le cortex visuel possède des neurones de 
+				formes différentes, chacun spécialisé dans une fonction particulière, rendant ainsi le cortex cérébral bien plus efficace dans 
+				l’analyse d’informations provenant de notre environnement. Paul Werbos, créateur du perceptron multicouche en 1984, n’a donc pas pu 
+				calquer parfaitement le fonctionnement du cortex visuel, mais il s’est inspiré de son fonctionnement général.
+				<br>
+				<br>
+				D’autres architectures vont également être mises en place par la suite pour répondre à des problèmes de plus en plus complexes, tels que :
+				<br>
+				<br>
+				Les réseaux de neurones à convolution s’inspirent également du fonctionnement du cortex visuel primaire. Les informations transmises 
+				par les photorécepteurs de l’œil, à savoir les cônes et les bâtonnets, sont envoyés au cortex visuel primaire après avoir subi une 
+				première analyse dans les deux corps genouillés frontaux que nous possédons, comme on peut l’observer dans le schéma suivant.
+				<br>
+				<br>
+				</p>
+				<img class="mid" height="auto" width="600px" src="images/schemachemin.png" alt="Schéma explicatif et figuratif du cheminement de l’information visuelle de l’œil jusqu’au cortex visuel"/>
+				<p class="under"><u>Schéma explicatif et figuratif du cheminement de l’information visuelle de l’œil jusqu’au cortex visuel</u></p>
+				<p>
+				<br>
+				<br>
+				Au début des années soixante, David Hubel, un neurobiologiste américano-canadien, et Torsten Wiesel, un neurobiologique suédois, ont 
+				réussi à explorer et à comprendre, à l’aide de microélectrodes, comment le cortex visuel primaire analysait les informations qu’il 
+				recevait. Comme nous l’avons exprimé précédemment, ces neurobiologistes ont découvert l’organisation en colonnes des neurones 
+				biologiques dans le cortex visuel primaire. Cependant, ils ont également découvert que l’information visuelle est bien décomposée 
+				par le cerveau et analysé par trois voies perpendiculaires aux différentes couches horizontales, et qui vont chacune analyser un 
+				aspect de la vision.
+				<br>
+				<br>
+				La première voie est appelée canal « magnocellulaire » ou canal M. Elle reçoit les messages nerveux des deux yeux et permet d’analyser 
+				les mouvements brusques en détails. Elle a donc pour fonction de détecter les déplacements d’objets ainsi que de mesurer la profondeur 
+				d’un objet.
+				<br>
+				La deuxième voie est appelée canal «parvocellulaires-intertaches » ou canal P-IB. Ce canal, par opposition au canal M, se charge 
+				d’analyser précisément des formes stables. Le canal P-IB est alors spécialisé dans la reconnaissance d’objet sur une image.
+				<br>
+				La troisième et dernière voie est appelée canal des tâches. Ce canal reçoit des informations sur les couleurs perçues. Le canal 
+				des tâches est donc spécialisé dans l’analyse de la couleur des objets d’une image.
+				<br>
+				<br>
+				Ainsi, on observe dans le cortex visuel primaire une organisation des neurones semblables à celle des réseaux de neurones à 
+				convolution. Chaque couche verticale de neurones va analyser un aspect spécifique de l’image perçue, rendant alors la 
+				reconnaissance d’image bien plus performante.
+				</p>
+				<section id="3">
+				<br>
+				<br>
+				<br>
+				<br>
+				<h1>3) Les réseaux de neurones Kohonen</h1>
+				<p>
+				Les réseaux de neurones Kohonen, ou cartes auto-organisatrices, sont des réseaux de neurones composés de deux couches : 
+				une couche d’entrée et une couche de sortie formée d’une grille de neurones non connectés entre eux. Tous les neurones 
+				de la couche d'entrée sont connectés à tous les neurones de la couche de sortie. Chacune des connexions entre les neurones 
+				d’entrée et les neurones de sortie possède un poids p, fixée initialement de manière aléatoire.
+				<br>
+				<br>
+				La première couche, la couche d’entrée, reçoit des données à classifier. Chaque entrée n de cette couche va alors établir 
+				une connexion avec chaque neurone de la couche de sortie. Cette connexion aura un poids p fixé aléatoirement. L’algorithme 
+				du réseau de neurones Kohonen va alors comparer la valeur du poids p de cette connexion et la valeur de l’entrée n. Le 
+				neurone qui aura la plus petite marge d’erreur va être désigné comme le neurone vainqueur, et son poids sera alors modifié 
+				lors de la phase d’apprentissage du réseau de neurones pour se rapprocher de la valeur d’entrée n. Il y’aura autant de 
+				cycles nécessaires pour finir par obtenir une erreur minime. Cependant, les poids des connexions reliant les neurones 
+				proches du neurone vainqueur vont également être modifiés pour se rapprocher de la valeur de l’entrée n. Ces neurones 
+				formeront alors un groupe caractéristique de l’entrée n.
+				<br>
+				<br>
+				Tous les autres entrées auront également chacune un neurone vainqueur et ainsi un groupe de neurones qui leur est caractéristique.
+				<br>
+				<br>
+				L’utilité de ces réseaux Kohonen peut être présentée concrètement par l’exemple suivant
+				<br>
+				On dispose d’une matrice composé de 250 couleurs disposées de manière aléatoire comme dans l’image suivante :
+				<br><br>
+				<img class="mid" height="auto" width="400px" src="images/matricecouleura.png" alt="Matrice composée de couleurs placés aléatoirement"/>
+				<br>
+				Chaque couleur, considérée comme une entrée, aura son neurone vainqueur qui va former, avec les neurones 
+				avoisinants, un groupe caractéristique de cette couleur. Le réseau de neurones Kohonen permet alors de 
+				classifier l’ensemble de ces couleurs afin de déterminer quelles sont les différentes couleurs présentes 
+				dans cette image.
+				<br>
+				<br>
+				Après divers cycles d’apprentissage, le réseau de Kohonen renvoie la carte bidimensionnelle suivante :
+				<br><br>
+				<img class="mid" height="auto" width="400px" src="images/matricecouleurb.png" alt="Matrice composée de couleurs organisés en groupes"/>
+				<br>
+				On distingue alors que l’image initiale est composée de huit couleurs différentes : le blanc, le 
+				gris, le jaune, le violet, le bleu, l’orange, le rouge et le vert.
+				<br>
+				<br>
+				Les réseaux Kohonen sont donc des réseaux de neurones capables de classifier des données de manière 
+				non-supervisée.  Il s’agit donc d’un réseau de neurones très utile pour catégoriser les données en 
+				groupes spécifiques si aucun groupe n'est défini au départ. Contrairement aux réseaux de neurones 
+				étudiés précédemment, les réseaux Kohonen ne cherchent pas à donner une réponse à un problème mais 
+				à trouver des tendances parmi les données fournies.
+				<br>
+				<br>
+				Les réseaux Kohonen s’inspirent fortement de l’organisation du cortex cérébral des vertébrés. En 
+				effet, dans le cortex auditif des vertébrés par exemple, on sait, grâce à la Magnéto-encéphalographie 
+				(MEG), que les neurones sont organisés et regroupés selon la fréquence du son perçu. Cette organisation 
+				est appelée organisation tonotopique. Ainsi, il existe un groupe de neurones sensibles aux sons de 
+				fréquences voisines de 500 Hz, un autre groupe de neurones sensibles à des sons de fréquences voisines 
+				de 1000 Hz et ainsi de suite jusqu’aux fréquences voisines de 16 000 Hz. Cette organisation permet alors 
+				au cerveau de classifier une grande variété de sons et ainsi reconnaître s’il s’agit de sons aigus ou graves.
+				</p>
+				<img class="mid" height="auto" width="500px" src="images/magnetoencephalographie.png" alt="Magnéto-encéphalographie d’un sujet normo-entendant"/>
+				<p class="under"><u>Magnéto-encéphalographie d’un sujet normo-entendant</u></p>
+				<br>
+				<br>
+				<p>
+				Grâce à la technique de Magnéto-encéphalographie (MEG), on retrouve bien cette organisation tonotopique 
+				chez un sujet normo-entendant, c’est-à-dire un sujet ayant une audition normale, où un groupe de neurones 
+				spécifique est stimulé pour chaque son ayant une fréquence particulière.
+				<br>
+				<br>
+				Aujourd’hui, ce réseau de neurones possède des applications concrètes puisqu’il est utilisé pour des 
+				tâches de classification essentielles. Des chercheurs de l’université Paris-I ont voulu par exemple 
+				dresser des profils types de chômeurs récurrents, afin de déterminer les individus les plus touchés 
+				par le chômage. Ils ont alors défini comme entrée une vingtaine de milliers de chômeurs, caractérisés 
+				par onze informations qualitatives comme leur âge, leur formation, leur expérience professionnelle et 
+				ainsi de suite. Ils ont ensuite définis le nombre de classes qu’ils souhaitaient avoir, chacune d’entre 
+				elles étant caractérisée par un profil type. L’algorithme du réseau de neurone artificiel a ensuite, à 
+				partir des données fournies, associé un profil type à chaque classe. La carte fournie par le réseau de 
+				neurones Kohonen permet ainsi de déterminer les profils types de chômeurs en France. Cette classification 
+				se révèle utile pour mieux lutter contre le chômage en France.
+				</p>
+				<section id="4">
+				<br>
+				<br>
+				<br>
+				<br>
+				<h1>4) Plasticité des réseaux de neurones biologiques et artificiels</h1>
+				<p>
+				La capacité d’apprentissage du réseau de neurones biologiques n’est pas uniquement due à l’association 
+				de neurones entre eux. La plasticité est une propriété fondamentale du réseau de neurones biologiques 
+				qui explique comment l’homme arrive à apprendre continuellement et à limiter ses erreurs. Cette plasticité 
+				est notamment due au fait que les synapses, c’est-à-dire les zones de contact entre différents neurones 
+				biologiques, ne restent pas figées. Elles évoluent sans cesse au cours du temps et certaines peuvent 
+				s’affaiblir et disparaitre tandis que d’autres peuvent se créer et se renforcer.
+				<br>
+				<br>
+				En effet, lorsqu’un neurone post-synaptique est stimulé régulièrement, le nombre de ces récepteurs 
+				membranaires augmente. Il est ainsi plus sensible aux stimulations des neurotransmetteurs reçus du 
+				neurone pré-synaptique : c’est ce qu’on appelle la potentialisation à long terme, et la synapse est 
+				alors renforcée. Cependant, lorsque le neurone post-synaptique n’est pas stimulé régulièrement, le 
+				nombre de ces récepteurs diminuent. Il est alors beaucoup moins sensible aux stimulations des 
+				neurotransmetteurs reçus du neurone pré-synaptique : c’est-ce qu’on appelle la dépression à long 
+				terme et la synapse est alors affaiblie.
+				<br>
+				<br>
+				Cela conforme donc bien la théorie de Hebb (1949) selon laquelle un neurone qui subit une stimulation 
+				électrique puissante et fréquente d’un autre neurone augmente l’efficacité de ses connexions avec ce 
+				dernier. Cela explique également le principe de l’apprentissage : plus on s’exerce à réaliser une tâche, 
+				plus on voit stimuler les neurones d’une partie précise du cerveau. Les synapses entre ces neurones, 
+				c’est-à-dire leurs connexions vont alors se renforcer. Cette tâche sera donc plus facilement exécutée 
+				par la suite.
+				<br>
+				<br>
+				Cette plasticité permet à l’homme de développer certaines aptitudes. Les chauffeurs de taxis ont par 
+				exemple des connexions très renforcés au niveau de l’hippocampe, zone du cerveau responsable de notre 
+				sens d’orientation, après l’apprentissage des rues d’une ville. Cela leur permet d’exercer leur métier 
+				avec bien plus de facilités, ce qui serait d’une très grande difficulté voire impossible sans cette 
+				plasticité neuronale.
+				<br>
+				<br>
+				<br>
+				Le réseau de neurones artificiels est également doté d’une plasticité proche de celle du réseau de 
+				neurones biologiques. En effet, chaque connexion qui relie un neurone artificiel à un autre est dotée 
+				d’un poids p. La valeur de ce poids peut être élevée et la connexion entre les deux neurones artificiels 
+				est alors renforcée, ou bien la valeur de ce poids peut être basse et la connexion entre les deux neurones 
+				artificiels est alors affaiblie. Ces poids peuvent être constamment modifiés, comme c’est le cas pour les 
+				synapses biologiques qui peuvent se renforcer ou s’affaiblir au cours du temps.
+				<br>
+				<br>
+				Cette particularité des réseaux de neurones artificiels permet alors à ces derniers d’avoir une véritable 
+				capacité d’apprentissage, comme c’est le cas pour le réseau de neurones biologiques. En effet, en créant 
+				un algorithme qui modifie les poids de chaque connexion d’un réseau de neurones artificiels, ce dernier 
+				peut finir par avoir une sortie, c’est-à-dire un résultat, qui correspond au résultat escompté. Ainsi, 
+				si on veut par exemple que notre réseau de neurones artificiels reconnaisse une image correspondant à un 
+				0, le réseau de neurones va établir initialement des poids au hasard et il y’a de grande chance que la 
+				sortie finisse par indiquer que l’image correspond à un 2 par exemple, ce qui est une réponse totalement 
+				différente du résultat souhaité. Or, par la suite, l’algorithme d’apprentissage va modifier les poids de 
+				chacune des connexions pour que le réseau de neurone indique en sortie qu’il s’agit d’un 0. Cette phase 
+				de correction de chaque poids s’appelle le « training » et constitue la base de l’apprentissage d’un réseau 
+				de neurones artificiels. Il est dicté par un algorithme d’apprentissage plus ou moins complexes, et qui 
+				dépend avant tout de l’architecture du réseau de neurones retenue.
+				<br>
+				<br>
+				L’algorithme d’apprentissage le mieux adapté au réseau de neurones multicouche, que nous allons utiliser 
+				par la suite, est l’algorithme dit de « rétropropagation du gradient ». La rétropropagation du gradient est un algorithme permettant de calculer le gradient d'erreur pour chaque neurone d'un
+				au de neurones artificiel, de la dernière couche jusqu'à la première. C'est un algorithme qui suit la démarche de 
+				Windrow-Hoff et qui permet de résoudre le problème suivant:
+				<br>
+				Soit un réseau de perceptrons à 3 couches ayant 3 neurones sur sa couche d'entrée, 2 neurones sur sa deuxième couche
+				et 1 neurone sur sa couche de sortie (voici un schéma):
+				<br>
+				<br>
+				<img class="mid" height="auto" width="400px" src="images/image 1.png" alt=""/>
+				<br>
+				<br>
+				Immaginons que nous voulons apprendre à ce réseau de neurones une situation, nous initialisons donc tous les poids 
+				synaptiques aléatoirement et faisons passer un échantillon de donnée dans le réseau (ici un échantillon de 3bit)
+				nous comparons la sortie avec celle attendue et pouvons corriger le poids synaptique du neurone de la dernière couche 
+				avec la règle d'apprentissage du perceptron car les valeurs de l'entrée, de la sortie et de la sortie voulue sont connues
+				(Règle d'apprentissage du perceptron: <br><br>
+				<img class="mid" height="auto" width="200px" src="images/perceptronregle.png" alt=""/>
+				<br>
+				avec w' le poids corrigé, w le poids actuel, y<sub>t</sub> la sortie voulue, y la
+				sortie actuelle, x l'entrée du poids actuelle et a le taux d'apprentissage). Mais une fois ceci fait, nous ne pouvons pas aller
+				plus loin: sur la deuxième et première couche, nous ne connaissons pas la valeur des sorties voulues. Et c'est là que l'algorithme
+				de rétropropagation du gradient rentre en jeu.
+				<br>
+				Cet algorithme se déroule comme ceci:
+				<br>
+				-On initialise tous les poids synaptiques de façon aléatoire,
+				<br>
+				-On prend un échantillon de donnée et on l'injecte dans la première couche de réseau de neuronne,
+				<br>
+				-On recalcule toutes les sorties des neurones de haut en bas dans les couches et de gauche à droite dans le réseau,
+				<br>
+				-On calcule l'erreur de chaque neurone de la couche de sortie avec cette expression: <br><br>
+				<img class="mid" height="auto" width="200px" src="images/erreursortie.png" alt=""/>
+				<br>
+				avec e l'erreur du neurone,
+				g' la fonction dérivée de la fonction sigmoïde, h la fonction d'aggrégation (somme des produits des poids et des entrées du neurone),
+				t la sortie voulue et y la sortie obtenue.
+				<br>
+				-On calcule l'erreur des neurones des couches inférieurs (propagation vers l'arrière de l'erreur) en remontant les couches:<br><br>
+				<img class="mid" height="auto" width="200px" src="images/erreurreste.png" alt=""/> 
+				<br>
+				avec e l'erreur du neurone, g' la fonction dérivée de la fonction sigmoïde, h la fonction d'agréggation
+				w<sub>ij</sub> le poid de l'entrée connectée du neurone i sur la couche supérieur, et e<sub>i</sub> l'erreur du neurone i de la couche suppérieur.
+				<br>
+				-Une fois tout le réseau remonté, l'erreur de chaque de neurone aura été calculé
+				<br>
+				-On corrige les poids synaptique de chaque neurone du réseau grâce à cette expression:
+				<br><br>
+				<img class="mid" height="auto" width="200px" src="images/majpoids.png" alt=""/> <br>
+				avec w<sub>ij</sub>' le poids corrigé, w<sub>ij</sub> le poids actuel, e<sub>i</sub> l'erreur du neurone, x<sub>j</sub> l'entrée du neurone et λ le taux d'apprentissage.
+				<br>
+				<br>
+				Cet algorithme a été la partie la plus difficile à mettre en place dans notre modélisation de réseau de neurone.
+				<br>
+				<br>
+				L’apprentissage utilisé dans ce cas est qualifié de supervisé. En effet, on présente au réseau des neurones 
+				artificiels des exemples de ce qu’il doit reconnaitre pour qu’il en détermine les caractéristiques et pour 
+				qu’il soit capable de classer par la suite de nouvelles entrées. Autrement dit, si l’on veut que notre 
+				réseau de neurones reconnaisse les chiffres 0, 1 et 2, tous les poids corrigés grâce à l’algorithme de 
+				rétropropagation du gradient pendant la phase du « training » permettent au réseau de neurones artificiels 
+				d’apprendre les caractéristiques propres au chiffre 0, 1 et 2, comme la présence d’une courbe pour le chiffre 2, 
+				d’une ligne pour le chiffre 1 et d’un espace vide au milieu du 0. Il pourra ensuite aisément reconnaître de 
+				nouvelles images correspondant à ces chiffres.
+				<br>
+				<br>
+				Il existe également un autre type d’apprentissage, appelé apprentissage « non supervisé » et qui consiste à 
+				présenter une large quantité de données à un réseau de neurones artificiels. L’algorithme d’apprentissage non 
+				supervisé du réseau de neurones va alors découvrir par lui-même les caractéristiques d’un objet ou d’un être 
+				vivant. Ainsi, en 2012, le réseau de neurones développé par Google Brain a analysé pendant trois jours environ 
+				10 millions de captures d’écran de vidéos YouTube, choisies aléatoirement. A la fin de son apprentissage, le 
+				réseau de neurones parvenait à reconnaitre des têtes de chats et à les différencier avec ceux de l’Homme. Ce 
+				type d’apprentissage se rapproche davantage de l’apprentissage des enfants, qui analyse leur environnement 
+				pour en déduire certains concepts, comme la différence entre un chien et un homme. Pour un réseau de neurones 
+				artificiels, l’apprentissage non-supervisé est néanmoins plus difficile à mettre en place car il nécessite une 
+				large quantité de données au préalable.
+				<br>
+				<br>
+				<br>
+				La plasticité du réseau de neurones artificiels se rapproche donc de celle du réseau de neurones biologiques, 
+				mais nous pouvons noter quelques différences supplémentaires.
+				<br>
+				En effet, l’un des aspects de la plasticité des réseaux de neurones biologiques est leur capacité de « régénérescence », 
+				c’est-à-dire qu’ils sont capables de remplacer des neurones détruits par de nouveaux neurones fonctionnels.
+				<br>
+				Pour cela, le cerveau biologique possède des cellules spécifiques, les cellules souches neurales, qui sont capables de 
+				s’auto-renouveler et de permettre au cerveau humain de créer quotidiennement de nouveaux neurones. Ces cellules sont 
+				des cellules « multi-potente », c’est-à-dire créée lors de la formation de l’embryon. Lorsqu’un neurone est détruit, 
+				elles vont d’abord subir un processus de détermination : elles vont se transformer soit en neurones, soit en cellules 
+				gliales chargés d’entretenir le fonctionnement des neurones. Les cellules souches devenus neurones vont ensuite migrer 
+				vers la zone impactée du cerveau, où ont été détruits des neurones, et elles vont commencer à développer deux prolongements 
+				opposés appelés « neurites ». Chacun de ses prolongements va soit former un axone, soit se ramifier pour former des dendrites. 
+				Ces nouveaux neurones vont ainsi rétablir peu à peu les connexions avec les autres neurones du cerveau.
+				<br>
+				<br>
+				Cette régénérescence des neurones a été découverte par les scientifiques à la fin des années 1990, grâce notamment aux 
+				essais nucléaires. En effet, les essais nucléaires menés par les états ont permis au taux de carbone, présent dans notre 
+				environnement, d’évoluer au cours du temps. Or, deux isotopes du carbone, le carbone 12 et le carbone 14 radioactif, 
+				s’intègrent dans l’ADN de nos cellules dès la création de ces derniers. Ainsi, en mesurant le rapport entre le carbone 12 
+				et le carbone 14 présent dans une cellule, les scientifiques sont capables de déterminer sa date de création. Lorsque les 
+				chercheurs de l’institut Karolinska de Stockholm ont mesuré ce rapport dans les neurones de 55 personnes décédés, âgés de 
+				19 à 92 ans, ils ont découvert la présence de neurones crées bien après la naissance de ces personnes, confirmant ainsi 
+				l’hypothèse de la régénérescence des neurones. Ils ont même estimé que 1.400 neurones sont créés chaque jour au sein de 
+				l’hippocampe, une région de notre cerveau responsable de notre mémoire.
+				<br>
+				<br>
+				Cette capacité à remplacer les neurones défectueux et à créer de nouveaux neurones continuellement n’est pas présente chez 
+				les réseaux de neurones artificiels. La capacité de ces derniers à traiter une grande quantité d’informations se retrouve 
+				donc limitée.
+				</p>
+				<div>
+				<a class="top" href="theorie.html#top"></a>
+				</div>
+			</section>
+			
+			<footer>
+		<p>Site internet et TPE produits par Edgar DESNOS, Rodolphe VALICON et Aymane GHANAM.
+		<br>
+		<br>
+		<a href="bibli.html" class="bibli">Bibliographie du TPE</a>
+		</p>
+
+	</footer>

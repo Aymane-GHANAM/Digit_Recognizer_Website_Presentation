@@ -1,0 +1,141 @@
+<!doctype>
+
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Rapport de notre TPE sur les reseaux de neuronnes biologiques et artificiels"/>
+		<meta name="author" content="Edgar Desnos"/>
+		<meta name="keywords" content="TPE,Reseaux,neuronnes,artificiels,biologiques"/>
+		<link rel="stylesheet", href="style.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="icon" type="image/png" href="images/logo.png" />
+		
+		<script type="text/javascript">
+			$(window).on('scroll', function() {
+				if($(window).scrollTop()) {
+					$('nav').addClass('black');
+				}
+				else {
+					$('nav').removeClass('black');
+				}
+			})
+		</script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var offset = 250;
+				var duration = 500;
+				
+				$(window).scroll(function(){
+					if($(this).scrollTop() > offset){
+						$('.top').fadeIn(duration);
+					}else{
+						$('.top').fadeOut(duration);
+					}
+					});
+					});
+		</script>
+		
+		<title>TPE réseaux de neurones</title>
+		
+	</head>
+
+	<body onload="document.body.style.opacity='1'">
+		<div class="wrapper">
+		<section id="top">
+			<nav>
+				<div class="logo"><b>TPE réseaux de neurones</b></div>
+				<ul>
+					<li><a class="active" href="#">Accueil</a></li>
+					<li><a class="unactive" href="intro.html">Introduction</a></li>
+					<li><a class="unactive" href="theorie.html">Théorie</a></li>
+					<li><a class="unactive" href="experience.html">Expériences</a></li>
+					<li><a class="unactive" href="conclusion.html">Conclusion</a></li>
+				</ul>
+			</nav>
+			<section class="back">
+			<div class="inner">
+				<div class="title">
+					<h1>TPE</h1>
+					<h2>Les réseaux de neurones biologiques et artificiels</h2>
+				</div>
+			</div>
+			</section>
+			<section class="content">
+				<div id="intro">
+					<h1 class="start">Introduction</h1>
+					<p class="home">Présenté par l’entrepreneur américain Elon Musk 
+				comme «le plus grand risque auquel notre civilisation 
+				sera confrontée» tandis que l’université de Stanford 
+				mondialement reconnue ne cesse d’en montrer les bienfaits 
+				et les progrès, l’intelligence artificielle est aujourd’hui 
+				au cœur des débats et se présente comme « le » sujet 
+				incontournable du XXIème siècle...
+					<br><br>
+					<a href="intro.html" class="btn"></a>
+					</p>
+				</div>
+				<div class="parallax1"></div>
+				<br><br>
+				<h1 class="start">Theorie</h1>
+				<p class="home">Un neurone biologique est tout d’abord une cellule nerveuse spécialisée dans la 
+				transmission et le traitement d’informations. Sa structure cellulaire a été découverte 
+				au début du XXème siècle grâce notamment au médecin italien Camillo Golgi, qui a pu 
+				observer les cellules nerveuses et leurs prolongements en les marquant avec du nitrate 
+				d’argent...
+				<br><br>
+				<a href="theorie.html" class="btn"></a>
+				</p>
+				<div class="parallax2"></div>
+				<br><br>
+				<h1 class="start">Experiences</h1>
+				<p class="home">
+				Nous avons décidé de soumettre des individus, possédant une 
+				vue normale, à un test de reconnaissance de chiffres écrits de façon semblable au Braille. Ces derniers s’entraineront par la suite 
+				à reconnaitre ces chiffres écrits en Braille, et si nous observons une amélioration de leurs performances, notre 
+				hypothèse initiale sera confirmée. Cela voudra dire que notre réseau de neurones artificiels devra également 
+				s’entrainer à reconnaitre différentes chiffres 0, 1 et 2 pour limiter ses erreurs de reconnaissance par la suite...
+				<br><br>
+				<a href="experience.html" class="btn"></a>
+				</p>
+				<div class="parallax3"></div>
+				<br><br>
+				<h1 class="start">Conclusion</h1>
+				<p class="home">Le réseau de neurones artificiels se présente comme une 
+				véritable analogie du réseau de neurones biologiques. En 
+				effet, les neurones artificiels et biologiques adoptent 
+				les mêmes structures et le même mode de fonctionnement, 
+				rendant ainsi le réseau de neurones artificiels sensiblement 
+				efficace dans la transmission d’informations. Ses nombreuses 
+				topologies possibles, inspirées également des différents 
+				réseaux de neurones existant dans notre cerveau, rendent 
+				le réseau de neurones artificiels modulable pour toute 
+				sorte de problème, tel que la reconnaissance d’image ou 
+				encore la classification de données...
+				<br><br>
+				<a href="conclusion.html" class="btn"></a>
+				</p>
+				<div class="parallax4"></div>
+				<div>
+				<a class="top" href="home.html#top"></a>
+				</div>
+			</section>
+			
+		</div>
+		
+	</body>
+
+	<footer>
+		<p>Site internet et TPE produits par Edgar DESNOS, Rodolphe VALICON et Aymane GHANAM.
+		<br>
+		<br>
+		<a href="bibli.html" class="bibli">Bibliographie du TPE</a>
+		</p>
+
+	</footer>
+
+
+</html>
